@@ -1,0 +1,76 @@
+import javax.swing.*;
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+	public class CopProj extends JFrame implements ActionListener
+	{String msg;	
+	
+	JButton b1=new JButton("save");
+	JLabel l11=new JLabel("Student details",JLabel.CENTER);
+	JLabel l1=new JLabel("Name:",JLabel.LEFT);
+	JLabel l2=new JLabel("age:",JLabel.LEFT);
+	JLabel l3=new JLabel("Sex(M/F):",JLabel.LEFT);
+	JLabel l4=new JLabel("Address:",JLabel.LEFT);
+	JLabel l5=new JLabel("Course:",JLabel.LEFT);
+	JLabel l6=new JLabel("Semester:",JLabel.LEFT);
+	JLabel l7=new JLabel("",JLabel.RIGHT);
+	JTextField t1=new JTextField();
+	TextArea t2=new TextArea("",180,90,TextArea.SCROLLBARS_VERTICAL_ONLY);
+	
+	public CopProj()
+	{
+	
+		super("Student Registration");
+		addWindowListener(new myWindowAdapter());
+		setSize(500, 500);
+		setLayout(null);
+		setBackground(Color.cyan);
+		setForeground(Color.black);
+		add(b1);
+		add(l11);
+		add(l1);
+		add(l2);
+		add(l3);
+		add(l4);
+		add(l5);
+		add(l6);
+		add(l7);
+		add(t1);
+		add(t2);
+		l1.setBounds(25,65,90,20);
+		l2.setBounds(25,90,90,20);
+		l3.setBounds(25,120,90,20);
+		l4.setBounds(25,185,90,20);
+		l5.setBounds(25,260,90,20);
+		l6.setBounds(25,290,90,20);
+		l7.setBounds(25,260,90,20);
+		l11.setBounds(10,40,280,20);
+		t1.setBounds(120,65,170,20);
+		t2.setBounds(120,185,170,60);
+		b1.setBounds(120,350,50,30);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		b1.addActionListener(this);
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getActionCommand().equals("save"))
+		{msg="Student details saved!";
+		}
+	
+	}
+	public static void main(String [] args)
+	{
+		CopProj fr = new CopProj();
+		fr.setSize(new Dimension(500,500));
+		fr.setVisible(true);
+	}
+}
+	class myWindowAdapter extends WindowAdapter
+	{
+		public void windowClosing(WindowEvent e)
+	{
+		System.exit(0);
+	}
+}
