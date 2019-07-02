@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class code{
+public static void main (String [] args)
+{
+int sum, diff, prod, qou, num1, num2;
+
+Scanner code = new Scanner (System.in);
+
+System.out.println("Enter First Number: ");
+num1 = code.nextInt();
+System.out.println("Enter Second Number: ");
+num2 = code.nextInt();
+
+sum = num1 + num2;
+diff = num1 - num2;
+prod = num1 * num2;
+qou = num2 / num1;
+
+System.out.println("Sum is "+sum);
+System.out.println("Difference is "+diff);
+System.out.println("Product is "+prod);
+System.out.println("Qoutient is "+qou);
+}
+}
