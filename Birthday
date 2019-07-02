@@ -1,0 +1,21 @@
+import java.util.*;
+public class Birthday{
+	public static void main (String args[]){
+	
+	Scanner Birthday = new Scanner (System.in);
+	
+	System.out.print("Enter Your Name: ");
+	String name = Birthday.nextLine();
+	System.out.print("Enter Birth Month: ");
+	String month = Birthday.nextLine();
+	System.out.print("Enter Birth Day: ");
+	int day = Birthday.nextInt();
+	System.out.print("Enter Birth Year: ");
+	int year = Birthday.nextInt();
+	
+	int answer = 2015 - year;
+	
+	System.out.print("\n\nName: "+name);
+	System.out.print("\nAge: "+answer);
+	}
+}
