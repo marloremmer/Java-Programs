@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class TriangularNumbers
+{
+	public static void main (String ags [])
+	{
+		
+		int String_number = 1;
+		int ending_number;
+		Scanner in = new Scanner (System.in);
+		System.out.print("Enter a number: ");
+		ending_number = in.nextInt();		
+		System.out.print("List of Triangular Numbers");
+		for (int i = String_number; i <= ending_number; i++)
+		{
+		triangular = String_number + 0;
+			System.out.println(i + "=" +triangular);
+		}
+	}
+}
