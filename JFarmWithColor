@@ -1,0 +1,25 @@
+import java.awt.*;
+import javax.swing.*;
+
+	public class JFrameWithColor extends JFrame
+	{
+		private Container con = getContentPane();
+		private JButton bt = new JButton("Click Me");
+		private FlowLayout fl = new FlowLayout();
+		
+		public JFrameWithColor()
+	{
+		super("JFrame with Color");
+		setSize(300, 300);
+		con.setLayout(fl);
+		con.add(bt);
+		con.setBackground(Color.ORANGE);
+		bt.setBackground(Color.DARK_GRAY);
+		bt.setForeground(Color.WHITE);
+	}
+	public static void main(String args[])
+	{
+		JFrameWithColor fr = new JFrameWithColor();
+		fr.setVisible(true);
+	}
+}
