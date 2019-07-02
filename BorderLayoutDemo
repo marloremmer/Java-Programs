@@ -1,0 +1,36 @@
+import javax.swing.*;
+import java.awt.*;
+
+	public class BorderLayoutDemo extends JFrame 
+	{
+		private JButton nb = new JButton("North Button");
+		private JButton sb = new JButton("South Button");
+		private JButton eb = new JButton("East Button");
+		private JButton wb = new JButton("West Button");
+		private JButton cb = new JButton("Macaraeg Button");
+		private Container con = getContentPane ();
+		
+			public BorderLayoutDemo ()
+			{
+				nb.setBackground(Color.GREEN);
+				sb.setBackground(Color.BLUE);
+				eb.setBackground(Color.ORANGE);
+				wb.setBackground(Color.YELLOW);
+				cb.setBackground(Color.PINK);
+				con.setLayout(new BorderLayout());
+				con.add(nb, BorderLayout.NORTH);
+				con.add(sb, BorderLayout.SOUTH);
+				con.add(eb, BorderLayout.EAST);
+				con.add(wb, BorderLayout.WEST);
+				con.add(cb, BorderLayout.CENTER);
+				setSize(400, 150);
+				
+			}
+			
+				public static void main (String [] args)
+				{
+					
+					BorderLayoutDemo fr = new BorderLayoutDemo ();
+					fr.setVisible(true);
+				}
+	}
