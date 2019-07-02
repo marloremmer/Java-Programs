@@ -1,0 +1,23 @@
+import java.util.Arrays;
+import java.util.*;
+public class ArrayDemo1 {
+
+   public static void main(String[] args) {
+	int number = 0;
+   // initializing unsorted int array
+    Scanner input = new Scanner(System.in);
+	System.out.print("Enter: ");
+	number = input.nextInt();
+    int iArr[]  = new int[7];
+
+
+   // sorting array
+   Arrays.sort(iArr);
+
+   // let us print all the elements available in list
+   System.out.println("The sorted int array is:");
+   for ( number : iArr) {
+   System.out.println("Number = " + number);
+   }
+   }
+}
