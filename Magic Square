@@ -1,0 +1,32 @@
+import java.util.Scanner;
+	class Magicsquare{
+		public static void main(String args[]){
+		Scanner inpt = new Scanner(System.in);
+		int c,r;
+		
+		System.out.println("Enter any odd number: ");
+		c=inpt.nextInt();
+		
+		if(c%2==1){
+		
+		int box[][]=new int [c][c];
+		
+		System.out.println("MAGIC SQUARE");
+		for(int i=0; i<c; i++){
+			System.out.println("\n");
+			r=i+1;
+			for(int j=0; j<c; j++){
+			if(r>c){
+			r=1;
+			}
+			box[i][j]=r;
+			System.out.print(box[i] [j]);
+			r++;
+			}
+			}
+		}
+		else{
+		System.out.println("The number you entered is not a ODD Number!");
+	}
+	}
+}
