@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class LocationDemo extends JFrame implements ActionListener
+{
+	JButton pressButton = new JButton("Press");
+	int x = 0, y = 0;
+	final int GAP = 30;
+	
+	public LocationDemo()
+	{
+		setTitle("Macaraeg");
+		setLayout(new FlowLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		add(pressButton);
+		pressButton.addActionListener(this);
+		pressButton.setBackground(Color.GREEN);
+	}
+	
+		public void actionPerformed (ActionEvent e)
+		{
+			pressButton.setLocation(x,y);
+			x += GAP;
+			y += GAP;
+		}
+			public static void main (String [] args )
+			{
+				LocationDemo fr = new LocationDemo();
+				fr.setSize (250, 150);
+				fr.setVisible(true);
+			}
+}
