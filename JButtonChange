@@ -1,0 +1,46 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+	public class JButtonChange extends JFrame implements ActionListener{
+	
+		JButton b1 = new JButton("One");
+		JButton b2 = new JButton("Two");
+		JButton b3 = new JButton("Three");
+		JButton b4 = new JButton("Macaraeg");
+	
+	public JButtonChange(){
+		super("Change Message");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JPanel pane = new JPanel();
+			
+		pane.add(b1);
+		pane.add(b2);
+		pane.add(b3);
+		pane.add(b4);
+		
+		setContentPane(pane);	
+		
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		b4.addActionListener(this);
+	
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		Object source = e.getSource();
+		
+		if(source == b1)
+			b1.setText("Event");
+		else if(source == b2)
+			b2.setText("Handlers");
+		else if(source == b3)
+			b3.setText("Incorporated");
+		}
+	public static void main(String [] args){
+		JFrame aFrame = new JButtonChange();
+		aFrame.setSize(250, 100);
+		aFrame.setVisible(true);
+		}
+	}
