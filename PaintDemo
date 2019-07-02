@@ -1,0 +1,35 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class PaintDemo extends JFrame implements ActionListener
+{
+	JButton pressButton = new JButton ("Press");
+	
+	public PaintDemo ()
+	{
+		setTitle("Paint Demo");
+		setLayout(new FlowLayout());
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		add(pressButton);
+		pressButton.addActionListener(this);
+	}
+		public void actionPerformed (ActionEvent e)
+		{
+			System.out.println("Button is Pressed");
+			repaint();
+		}
+		
+			public void paint (Graphics g)
+			{
+				System.out.println("In Paint method");
+				super.paint(g);
+			}
+				
+				public static void main (String []args)
+				{
+					PaintDemo fr = new PaintDemo();
+					fr.setSize(250, 100);
+					fr.setVisible(true);
+				}
+}
