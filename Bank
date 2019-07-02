@@ -1,0 +1,88 @@
+import java.util.*;
+public class PrimaryCode
+	{
+		public static void main(String[]args)
+		{ 
+			SecondaryCode copro = new SecondaryCode ();
+			Scanner bank = new Scanner (System.in);
+			String [] myArray = new String [5];
+			myArray[0] = "\tWELCOME";
+			myArray[1] = "\tYou Choose Withdraw";
+			myArray[2] = "\tYou Choose Deposit";
+			myArray[3] = "\tYou Choose Balance Inquiry";
+			myArray[4] = "\tYou Choose Exit";
+			int  money  = 0;
+			int  deposit  = 0;
+			int  option = 0;	
+			int  stop = 0;
+	
+				System.out.print("Enter PIN NO.: ");
+				int pin = bank.nextInt();
+				System.out.print("Enter Password: ");
+				int password = bank.nextInt();
+		
+				do 
+				{
+					if (password == 8960 && pin == 6579)
+					{		
+							System.out.print("================================================================================");
+							System.out.println(myArray[0]);
+							System.out.print("================================================================================");
+							System.out.println("\t[STI BANK]");
+							System.out.println("\t[1] - Withdraw");
+							System.out.println("\t[2] - Deposit");
+							System.out.println("\t[3] - Balance Inquiry");
+							System.out.println("\t[4] - Exit");
+							System.out.print("\tChoose from the Options: ");	
+							option = bank.nextInt();
+
+								switch (option) 
+								{
+									case 1:{//Withdraw	
+									System.out.print("\n");
+									System.out.println(myArray[1]);
+									System.out.println ("\n\tYour Current Balance: " +copro.balanceInquiry());
+									System.out.print ("\n\tEnter Amount: ");
+									money = bank.nextInt();
+									System.out.println (copro.Withdraw(money));
+									}
+									break;
+									case 2:{ //Deposit
+									System.out.print("\n");
+									System.out.println(myArray[2]);
+									System.out.println ("\n\tYour Current Balance: " +copro.balanceInquiry());
+									System.out.print ("\n\tEnter Amount: ");
+									deposit = bank.nextInt();
+									System.out.println (copro.Deposit(deposit));
+									}
+									break;
+									case 3: {//Balance Inquiry
+									System.out.print("\n");
+									System.out.println(myArray[3]);
+									System.out.println ("\n\tYour Balance is " +copro.balanceInquiry());
+									stop = 1;
+									System.out.print("\n");
+									}
+									break;
+									case 4:{ //Exit
+									System.out.print("\n");
+									System.out.println(myArray[4]);
+									System.out.println ("\n\tThank you for using the program.");
+									stop = 0;
+									}
+									break;
+			
+									default:{ //Error
+									System.out.println ("\n\tError. Please try again.");
+									stop = 1;
+									}
+									break;
+								}
+					}
+					else
+					{
+						System.out.print("Wrong PIN NO./PASSWORD. The program will be terminated. Thank you for using the program.");
+					}
+				}while ( stop !=0 ); //Stop
+	}
+}
