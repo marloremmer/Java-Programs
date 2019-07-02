@@ -1,0 +1,65 @@
+import java.util.*;
+public class food {
+    public static void main(String[]args) {
+		Scanner in = new Scanner (System.in);
+			int stop = 2;
+			do{
+			System.out.println ("Choose:");
+            System.out.println("[1] - Go Foods");
+            System.out.println("[2] - Grow Foods");
+            System.out.println("[3] - Glow Foods");
+			System.out.print("Choose from the Options: ");
+			int option = in.nextInt();
+					
+					switch(option){
+					case 1: //Go Foods 
+					System.out.println("\nYou Choose Go Foods.");
+					System.out.println("1. Breads");
+					System.out.println("2. Ham");
+					System.out.println("3. Crackers");
+					System.out.println("4. Rice");
+					System.out.println("Do you want to continue? 1. yes or 2. no");
+					System.out.print("\nEnter your Choice: ");
+					int answer = in.nextInt();
+						if (answer == 1){
+						stop = stop - 2;
+						else if (answer == 2){
+						stop = stop + 1;  
+						}
+						break;
+				
+						 case 2: //Grow Foods
+						 System.out.println("You Choose Grow Foods.");
+						 System.out.println("1. Yogurt");
+						 System.out.println("2. Milk");
+						 System.out.println("3. Cheese");
+						 System.out.println("4. Egg");
+						 System.out.println("Do you want to continue? 1. yes or 2. no");
+						 System.out.print("\nEnter your Choice: ");
+						 int answer1 = in.nextInt();
+						if (answer1 == 1){
+						stop = stop - 2;
+						else if (answer == 2){
+						stop = stop + 1;  
+						}
+						break;
+						
+							 case 3: // Glow Foods {
+							 System.out.println("You Choose Glow Foods.");
+							 System.out.println("1. Squash");
+							 System.out.println("2. Corn");
+							 System.out.println("3. Potatoes");
+							 System.out.println("4. Carrots");
+							 System.out.println("Do you want to continue? 1. yes or 2. no");
+							 System.out.print("\nEnter your Choice: ");
+							 int answer2 = in.nextInt();
+						if (answer == 0){
+						stop = stop - 2;
+						else if (answer == 2){
+						stop = stop + 1;  
+						}
+						break;			
+			 } // option
+			} while (stop ==0); // do	
+		}
+}
