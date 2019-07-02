@@ -1,0 +1,33 @@
+import java.util.*;
+public class Name
+{
+	public static void main (String args [])
+	{
+		String [] names = {"Kiwi", "Coconut", "Banana", "Orange", "Apple", "Melon"};
+		sortStringBubble (names);
+		for (int k = 0; k < 6; k++)
+		System.out.println(names [k]);
+	}
+	
+	public static void sortStringBubble (String x [] )
+	{
+		int j;
+		boolean flag = true;
+		String temp;
+		
+		while (flag)
+		{
+			flag = false;
+			for (j = 0; j < x.length -1; j++)
+			{
+				if ( x [j].compareToIgnoreCase(x [j+1])>0)
+				{
+					temp = x [j];
+					x [j] = x [j+1];
+					x [j+1] = temp;
+					flag = true;
+				}
+			}
+		}
+	}
+}
