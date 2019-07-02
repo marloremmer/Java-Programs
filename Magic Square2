@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class MagicSquare2
+{
+	public static void main(String[] agrs)
+	{
+		Scanner in = new Scanner(System.in);
+		int Z = 0;
+		do
+		{
+			try
+			{
+				System.out.println("Z must be odd [>2] numbers only!");
+				System.out.println("Enter Value of Z:");
+				Z = in.nextInt();
+			} catch (NumberFormatException e){
+				System.out.println("\nInput must be an integer....\n");
+			}
+		}
+		while(Z<3||Z%2==0);
+		int Key=2, I=Z-1, J=(Z-1)/2, K, L;
+		int square[][]=new int[Z+1][Z+1];
+		square[I][J]=1;
+		while(Key<=Z*Z)
+		{
+			K=I+1;
+			if(K>=Z)
+				K-=Z;
+			L=J+1;
+			if(L>=Z)
+				L-=Z;
+			if(square[K][L]!=0)
+				I=(I-1)%Z;
+			else
+			{
+				I=K;
+				J=L;
+			}
+		square[I][K]=Key;
+		Key++;
+		}
+		for(I=0; I<Z; I++)
+		{
+			for(J=0; J<Z; J++)
+			{
+				square[I][Z]+=square[I][J];
+				square[Z][J]+=square[I][J];
+			}
+			square[Z][Z]+=square[I][I];
+		}
+		for(I=0; I<Z+1; I++)
+		{
+			for(J=0; J<Z+1; J++)
+				System.out.print(square[I][J]+"\t");
+			System.out.println();
+		}
+	}
+}
