@@ -1,0 +1,25 @@
+public class SecondaryCode {
+    private float balance;
+    public SecondaryCode(){
+        balance = 50000;
+    }
+	// withdraw
+		public String Withdraw( int withdraw ) {
+        if ( balance <= withdraw ) {
+            return "\n\tYour Withdrawal is Unsuccesful. Your remaining balance is " +balance+ " \n\tPlease deposit to continue use of service.\n";
+        }
+        else {
+            balance -= withdraw;
+            return "\n\tYour Withdrawal is Successful. Your remaining balance is " +balance+"\n";
+        }
+    }
+// deposit
+    public String Deposit( int deposit ){
+        balance+=deposit;
+        return "\n\tSuccess. You have a balance of " +balance+"\n";
+    }
+	// balance
+    public double balanceInquiry(){
+        return balance;
+    }
+}
